@@ -1,0 +1,7 @@
+<!-- set variable for image -->
+{{ $asset := resources.Get "/images/OrlandoPenny1PhoneAd.jpg" }}
+<!-- set variable for image size -->
+{{ $img := $asset.Fit "800x400" }}
+<!-- display image -->
+<img alt="" src="{{ $img.RelPermalink }}" />
+<!-- <img src="images/React-tips.png" alt=""> -->

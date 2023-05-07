@@ -1,0 +1,26 @@
+{
+  "modules": [
+    {
+      "type": "hero",
+      "title": "Welcome to My Website",
+      "subtitle": "This is an awesome subtitle",
+      "background_image": "images/hero-bg.jpg"
+    },
+    {
+      "type": "gallery",
+      "title": "Gallery",
+      "images": [
+        "images/gallery1.jpg",
+        "images/gallery2.jpg",
+        "images/gallery3.jpg"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Call to Action",
+      "text": "Join our mailing list for updates and promotions!",
+      "button_text": "Subscribe",
+      "button_link": "/subscribe"
+    }
+  ]
+}

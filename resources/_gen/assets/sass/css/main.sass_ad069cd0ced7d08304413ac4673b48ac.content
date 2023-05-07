@@ -1,0 +1,322 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none; }
+
+footer, header, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0; }
+
+.chosen-color {
+  background-color: #0B9AAB; }
+
+.secondary-color {
+  background-color: #ffe70020; }
+
+.table-cell {
+  background-image: linear-gradient(to left, #ffe70020, white); }
+
+@font-face {
+  font-family: 'USPS IMb';
+  src: url("../fonts/USPSIMBStandard.ttf") format("truetype"); }
+
+.barcode {
+  font-family: 'USPS IMb', Arial, sans-serif; }
+
+.h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 1.2; }
+
+p {
+  font-size: 9px; }
+
+p.x-small {
+  font-size: 7px; }
+
+p.medium {
+  font-size: 10px; }
+
+p.large {
+  font-size: 11px; }
+
+p.semi-bold {
+  font-weight: 500; }
+
+p.bold {
+  font-weight: 700; }
+
+body {
+  background-color: #d9d9d9;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top; }
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold; }
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; }
+
+.site {
+  max-width: 100%;
+  width: 100%; }
+
+.site {
+  display: flex; }
+
+.page__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-block: 2rem; }
+
+.page + .page {
+  margin-top: 1rem; }
+
+.page {
+  width: 612px;
+  height: 792px;
+  padding: 1rem;
+  background-color: #ffffff; }
+
+.top {
+  display: flex;
+  justify-content: space-between; }
+
+.invoice-logo {
+  max-width: 78px;
+  width: 100%; }
+
+.barcode {
+  max-width: 210px; }
+
+/* Style for table headers and table cells */
+.table-header, .table-cell {
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 10px; }
+
+.table-header {
+  font-family: "IBM Plex Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 9px;
+  text-align: center; }
+
+/* Style for the table */
+.table {
+  width: 100%; }
+
+.creditcard {
+  width: 14px;
+  height: 10px;
+  border: .5px solid black;
+  border-radius: 1px;
+  padding: 1px; }
+
+button {
+  background-color: #0B9AAB;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 2px; }
+
+.input {
+  width: 30%;
+  padding: 2rem;
+  background-color: #284b63;
+  color: #ffffff; }
+  .input span {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px; }
+  .input input {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    border: none;
+    height: 30px;
+    border-radius: 2px;
+    padding-inline: 10px; }
+  .input hr {
+    border: 1px solid #ffffff;
+    margin-bottom: 1.5rem;
+    width: 100%; }
+  .input #logo {
+    padding: 0; }
+
+.logo-section {
+  width: 260px;
+  text-align: center; }
+  .logo-section .invoice-logo {
+    margin-block: 3px; }
+  .logo-section__address {
+    margin-bottom: 7px; }
+  .logo-section__url {
+    margin-bottom: 6px; }
+  .logo-section__addressee {
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    margin-left: 35px; }
+    .logo-section__addressee p {
+      font-size: 11px; }
+  .logo-section__checkbox {
+    display: flex;
+    margin-left: 35px;
+    margin-bottom: 12px; }
+    .logo-section__checkbox p {
+      text-align: left;
+      max-width: 150px;
+      margin-left: 4px; }
+    .logo-section__checkbox-box {
+      min-width: 8px;
+      height: 8px;
+      border: 1px solid #0b9aab; }
+
+.rounded {
+  padding-block: 2px;
+  border-radius: 9999px; }
+
+.top-right {
+  width: 270px; }
+  .top-right__billpay {
+    border: 1px solid #0B9AAB;
+    border-radius: 5px;
+    padding-block: 2px;
+    padding-left: 7px; }
+    .top-right__billpay p {
+      margin-right: 7px; }
+    .top-right__billpay-container {
+      display: flex; }
+  .top-right .barcode {
+    font-size: 16px; }
+  .top-right__credit-cards {
+    width: 84px;
+    display: flex;
+    justify-content: space-between; }
+  .top-right__credit-card {
+    height: 10px;
+    width: 16px;
+    border: 0.5px solid #000000;
+    border-radius: 1px;
+    display: flex;
+    align-items: center; }
+    .top-right__credit-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; }
+  .top-right__pay-online {
+    display: flex; }
+    .top-right__pay-online p {
+      margin-right: 4px; }
+  .top-right__pay-by-check {
+    margin-top: 3px;
+    margin-bottom: 6px; }
+  .top-right__pmnt-info-container {
+    display: flex;
+    justify-content: center; }
+  .top-right__pmnt-info-container + .top-right__pmnt-info-container {
+    margin-top: 8px; }
+  .top-right__pmnt-info + .top-right__pmnt-info {
+    margin-left: 8px; }
+  .top-right__absolute {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+  .top-right__pmnt-info {
+    position: relative;
+    width: 114px;
+    height: 28px;
+    border-radius: 5px;
+    border: 1px solid #0B9AAB;
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
+    .top-right__pmnt-info-header {
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px; }
+    .top-right__pmnt-info-image {
+      width: 122px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  .top-right__pmnt-desc {
+    text-align: center;
+    padding-top: 4px; }
+  .top-right__remit-to {
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 6px;
+    width: 225px;
+    margin-bottom: 17px; }
+  .top-right__barcode {
+    margin-top: 6px;
+    margin-bottom: 35px;
+    margin-left: 9px; }
+  .top-right__address {
+    margin-left: 9px; }
+    .top-right__address p {
+      line-height: 1.3; }
+  .top-right__detach {
+    margin-bottom: 16px; }
+  .top-right .zindex {
+    z-index: 1; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,36 @@
+{
+  "credits": {
+    "line1": "Additional reporting by TK.",
+    "line2": "Produced by ESPN Creative Studio: Rayna Banks, Michelle Bashaw, Rob Booth, Heather Donahue, Michael Drago, Karen Frank, Jarret Gabel, Luke Knox, Daniel Pellegrino, Laura Purtell, Garrett Siegel.",
+    "line3": "Photography credits: Sarah Nathan"
+  },
+  "recirc": {
+    "title": "Related Stories",
+    "links": [
+      {
+        "url": "#",
+        "imageSrc": "http://a1.espncdn.com/prod/styles/pagetype/otl/2023/230131_vs_mccluskey/images/credits-image.png",
+        "altText": "Image 1 description",
+        "linkText": "Short Links Here Tktk Ipsum Lorem Tktk"
+      },
+      {
+        "url": "#",
+        "imageSrc": "http://a1.espncdn.com/prod/styles/pagetype/otl/2023/230131_vs_mccluskey/images/credits-image.png",
+        "altText": "Image 2 description",
+        "linkText": "Another Short Link Tktk Ipsum Lorem Tktk"
+      },
+      {
+        "url": "#",
+        "imageSrc": "http://a1.espncdn.com/prod/styles/pagetype/otl/2023/230131_vs_mccluskey/images/credits-image.png",
+        "altText": "Image 3 description",
+        "linkText": "Another Short Link Tktk Ipsum Lorem Tktk"
+      },
+      {
+        "url": "#",
+        "imageSrc": "http://a1.espncdn.com/prod/styles/pagetype/otl/2023/230131_vs_mccluskey/images/credits-image.png",
+        "altText": "Image 4 description",
+        "linkText": "Another Short Link Tktk Ipsum Lorem Tktk"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="front-end web developer, web design, user experience, responsive design, HTML5, CSS3, JavaScript, website development, web accessibility, UI/UX, web performance optimization" />
+    <meta property="og:site_name" content="{{ $.Site.Title }}" />
+    <meta property="og:title" content="{{ $.Site.Title }}" />
+    <!-- <meta name="twitter:site" content="@your-twitter-handle" />
+    <meta name="twitter:creator" content="@your-twitter-handle" /> -->
+    <meta name="theme-color" content="#1a202c">
+
+    {{ if .IsPage }}
+      <title>{{ .Title }} | {{ $.Site.Title }}</title>
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="{{ .Title }}" />
+      <meta property="og:description" content="{{ .Summary }}" />
+      <meta name="description" content="{{ .Summary }}" />
+      <meta property="twitter:title" content="{{ .Title }}" />
+      <meta property="twitter:description" content="{{ .Summary }}" />
+      <meta property="article:author" content="Garrett Siegel" />
+      <meta property="article:published_time" content="{{ .Date }}" />
+    {{ else }}
+      <title>{{ $.Site.Title }}</title>
+      <meta name="twitter:card" content="summary" />
+      <meta property="og:title" content="{{ $.Site.Title }}" />
+      <meta property="og:description" content="blog about web development" />
+      <meta name="description" content="blog about web development" />
+    {{ end }}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="/css/main.css"> -->
+    {{ if .Site.IsServer }}
+      {{ $cssOpts := (dict "targetPath" "styles/main.css" "enableSourceMap" true ) }}
+      {{ $styles := resources.Get "css/main.sass" | toCSS $cssOpts }}
+      <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+    {{ else }}
+      {{ $cssOpts := (dict "targetPath" "styles/main.css" ) }}
+      {{ $styles := resources.Get "css/main.sass" | toCSS $cssOpts | postCSS | minify }}
+      <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+    {{ end }}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+    
+  </head>
+  <body>
+
+
+    <div class="site">
+      {{ partial "partials/input" }}
+      <div class="page__container">
+        <div class="page" id="page">
+          {{ partial "partials/form" }}
+        </div>
+        <div class="page" id="page2"></div>
+      </div>
+      
+    </div>
+
+
+
+
+
+    
+    
+    
+    {{ $js := resources.Get "js/app.js" | babel | js.Build "main.js" | resources.Minify }}
+    <script src="{{ $js.Permalink }}"></script>
+   
+  </body>
+
+</html>

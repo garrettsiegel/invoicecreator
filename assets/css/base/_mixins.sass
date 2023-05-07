@@ -1,0 +1,21 @@
+$breakpoints: ("s": 375px, "m": 700px, "l": 1000px, "xl": 1400px)
+
+// Map breakpoints
+@function breakpoint($b)
+  @return map-get($breakpoints, $b)
+
+=from($b)
+  @media screen and (min-width: breakpoint($b))
+    @content
+
+=upto($b)
+  @media screen and (max-width: breakpoint($b) - 1px)
+    @content
+  
+=flexAlignCenter
+  display: flex
+  flex-direction: column
+  align-items: center
+
+=borderPrimary
+  border: 1px solid $selected-color-primary
