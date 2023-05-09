@@ -1,54 +1,72 @@
-    
+<div class="top">
+  {{ partial "partials/logo-section" }}
+  {{ partial "partials/top-right" }}
+</div>
 
-  
+<div class="middle">
+  {{ partial "partials/table" }}
+</div>
 
-    <div class="top">
-      {{ partial "partials/logo-section" }}
-      {{ partial "partials/top-right" }}
+<div class="bottom">
+  <div class="bottom__post-it">
+    <p class="bottom__post-it-message sel-color bold">Message:</p>
+
+    <p class="bottom__post-it-text editable">
+      Did you fill out a<br>
+      Sliding Fee application?<br>
+      You may qualify for a discount.<br>
+      Payment plans are<br>
+      also available!</p>
+    <img src="../images/post-it.png" alt="">
+  </div>
+  <div class="bottom-right">
+
+    <div class="bottom-right__container">
+
+      <div class="bottom-right__left">
+        <div class="bottom-right__left-top">
+          <p class="bottom-right__left-top-header sel-color-bg bold">Make Checks Payable To:</p>
+          <p class="bottom-right__left-top-company large sel-color bold">Suncoast Community Health Centers</p>
+        </div>
+        <div class="bottom-right__left-bottom">
+          <p class="bottom-right__left-bottom-header sel-color bold opaque">Billing Questions</p>
+          <p class="bottom-right__left-bottom-questions large sel-color bold">813.653.6100</p>
+        </div>
+      </div>
+      <div class="bottom-right__center">
+        <p class="bottom-right__center-text x-small sel-color bold opaque ">Scan here to be directed to our new Online Payment site.</p>
+        <img class="bottom-right__center-image qrcode" src="../images/qr-code.png" alt="">
+      </div>
+      <div class="bottom-right__right">
+
+        <div class="bottom-right_acct-num">
+          <p>ACCOUNT NUMBER</p>
+          <p>555924</p>
+        </div>
+        <div class="bottom-right__stmnt-dt">
+          <p>STATEMENT DATE</p>
+          <p>11/15/2022</p>
+        </div>
+
+        <div class="bottom-right__due-date">
+          <p>PAYMENT DUE DATE</p>
+          <p>12/01/2022</p>
+        </div>
+
+        <div class="bottom-right__patient-resp">
+          <p>PATIENT RESPONSIBILITY</p>
+          <p>$197.88</p>
+        </div>
+
+      </div>
     </div>
 
-    
-
-
-    
 
 
 
-    <table class="table">
-      <thead>
-          <tr>
-              <th class="table-header sel-color-bg">DATE</th>
-              <th class="table-header sel-color-bg">Description</th>
-              <th class="table-header sel-color-bg">CHARGES</th>
-              <th class="table-header sel-color-bg">PAYMENTS & ADJUSTMENTS</th>
-              <th class="table-header sel-color-bg">PATIENT RESPONSIBILITY</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-            <td class="table-cell editable"></td>
-            <td class="table-cell editable">John Doe (555924) / Casey M Arnold MD</td>
-            <td class="table-cell editable"></td>
-            <td class="table-cell editable"></td>
-            <td class="table-cell editable"></td>
-          </tr>
-          <!-- <tr>
-            <td contenteditable="true" class="table-cell">10/17/22</td>
-            <td contenteditable="true" class="table-cell">Office visit</td>
-            <td contenteditable="true" class="table-cell">165.00</td>
-            <td contenteditable="true" class="table-cell"></td>
-            <td contenteditable="true" class="table-cell"></td>
-          </tr> -->
-          <!-- <tr>
-            <td contenteditable="true" class="table-cell">10/17/22</td>
-            <td contenteditable="true" class="table-cell">10/17/22</td>
-            <td contenteditable="true" class="table-cell">John Doe (555924) / Casey M Arnold MD<br>Office visit 165.00<br>Blood count 49.00<br>Basic metabolic panel 59.00</td>
-            <td contenteditable="true" class="table-cell">Insurance adjustment - 25.22<br>Insurance payment - 82.16<br>Patient payment - 30.00</td>
-            <td contenteditable="true" class="table-cell">BALANCE 135.62</td>
-          </tr> -->
-      </tbody>
-    </table>
-  
-      
-
-
+    <div class="bottom-right__text-arrow">
+      <p class="large sel-color">Please see reverse side of statement for important billing questions.</p>
+      <img src="../images/arrow.png" alt="">
+    </div>
+  </div>
+</div>

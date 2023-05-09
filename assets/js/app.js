@@ -1,180 +1,108 @@
-import { jsPDF } from "jspdf";
-
 class App {
 	constructor() {
-		this.init();
+		this.makeEditable();
+		this.changeLogoAndQrcode();
+		this.generatePDF();
+		this.colors();
 	}
 
-	init() {
-		
-		function makeEditable() {
-			const editableElements = document.querySelectorAll('.editable');
-		
-			editableElements.forEach(function(element) {
-				element.setAttribute('contenteditable', 'true');
-			});
-		}
-		
-		document.addEventListener('DOMContentLoaded', function() {
-			makeEditable();
+	makeEditable = () => {
+		const editableElements = document.querySelectorAll('.editable');
+		editableElements.forEach(function(element) {
+			element.setAttribute('contenteditable', 'true');
 		});
-		
+	}
 
+	changeLogoAndQrcode = () => {
+		document.getElementById('logo').addEventListener('change', function() {
+			const reader = new FileReader();
+			reader.onload = function(e) {
+					document.querySelector('.invoice-logo').src = e.target.result;
+			};
+			reader.readAsDataURL(this.files[0]);
+		});
+		document.getElementById('qrcode').addEventListener('change', function() {
+			const reader = new FileReader();
+			reader.onload = function(e) {
+					document.querySelector('.qrcode').src = e.target.result;
+			};
+			reader.readAsDataURL(this.files[0]);
+		});
+	}
 
+	generatePDF = () => {
+		document.getElementById('generate-pdf').addEventListener('click', function () {
+			const invoice = document.getElementById('page');
+		
+			html2canvas(invoice, {
+				scale: 5,
+				onclone: (clonedDoc) => {
+					const svgElements = clonedDoc.querySelectorAll("svg");
+		
+					Array.from(svgElements).forEach((svg) => {
+						const img = document.createElement("img");
+						img.src = "data:image/svg+xml," + encodeURIComponent(svg.outerHTML);
+						svg.parentNode.replaceChild(img, svg);
+					});
+				},
+			}).then((canvas) => {
+				const imgData = canvas.toDataURL("image/png");
+		
+				const docDefinition = {
+					content: [
+						{
+							image: imgData,
+							width: 612,
+							alignment: "center",
+						},
+					],
+					pageMargins: [0, 0, 0, 0],
+				};
+		
+				pdfMake.createPdf(docDefinition).download("invoice.pdf");
+			});
+		});
+	}
 
-		document.addEventListener('DOMContentLoaded', function() {
-			const bgColorInput = document.getElementById('primary-color');
-			const secondaryColorInput = document.getElementById('secondary-color');
-		
-			function updateColors() {
-				const primaryColor = bgColorInput.value;
-				const secondaryColor = secondaryColorInput.value;
-		
-				// Update primary color
-				document.documentElement.style.setProperty('--selected-color-primary', primaryColor);
-				const primaryColorElements = document.querySelectorAll('.sel-color-bg');
-				primaryColorElements.forEach(function(element) {
-					element.style.backgroundColor = primaryColor;
-					element.style.color = '#ffffff'; // Set text color to white
-				});
-		
-				// Update secondary color
-				document.documentElement.style.setProperty('--selected-color-secondary', secondaryColor);
-				const secondaryColorElements = document.querySelectorAll('.secondary-color');
-				secondaryColorElements.forEach(function(element) {
-					element.style.backgroundColor = secondaryColor;
-				});
-		
-				const secondaryColorStyle = document.querySelector('#secondary-color-style');
-				if (secondaryColorStyle) {
-					secondaryColorStyle.innerHTML = `.table-cell { background-image: linear-gradient(to left, ${secondaryColor}, white); }`;
-				} else {
-					const newSecondaryColorStyle = document.createElement('style');
-					newSecondaryColorStyle.id = 'secondary-color-style';
-					newSecondaryColorStyle.innerHTML = `.table-cell { background-image: linear-gradient(to left, ${secondaryColor}, white); }`;
-					document.head.appendChild(newSecondaryColorStyle);
-				}
-				
-				const selColorElements = document.querySelectorAll('.sel-color');
-				selColorElements.forEach(function(element) {
-					element.style.color = primaryColor; // Set text color to primary color
-				});
-			}
-		
-			// Update colors on input change
-			bgColorInput.addEventListener('input', updateColors);
-			secondaryColorInput.addEventListener('input', updateColors);
-		
-			// Set initial colors
+	colors = () => {
+		document.addEventListener('DOMContentLoaded', () => {
+			const [bgColorInput, secondaryColorInput] = ['primary-color', 'secondary-color'].map(id => document.getElementById(id));
 			bgColorInput.value = '#0b9aab';
 			secondaryColorInput.value = '#ffe70020';
-			updateColors();
-		});
-		
-		
-		document.getElementById('primary-color').addEventListener('input', function() {
-			const selectedColor = this.value;
-			const elements = document.querySelectorAll('.sel-color-border');
-			elements.forEach(function(element) {
-				element.style.borderColor = selectedColor;
-			});
-		});
-		
-		
-		
 	
-		
-		document.getElementById('logo').addEventListener('change', function() {
-				const reader = new FileReader();
-				reader.onload = function(e) {
-						document.querySelector('.invoice-logo').src = e.target.result;
-				};
-				reader.readAsDataURL(this.files[0]);
-		});
-
-		document.addEventListener('DOMContentLoaded', function() {
-			const barcodeValue = "DFTFTFAFTDTDDFATDFDADFDTATTFADFATFFFTTFFDDFFAFTDTTFDFTDADAFTFTTFT";
-			const barcodeInput = document.getElementById('barcode');
-			barcodeInput.value = barcodeValue;
-			
-			const barcodeElement = document.querySelector('.barcode');
-			barcodeElement.textContent = barcodeValue;
-		});
-		
-		document.getElementById('barcode').addEventListener('input', function() {
-			const barcodeValue = this.value;
-			const barcodeElement = document.querySelector('.barcode');
-			barcodeElement.textContent = barcodeValue;
-		});
-		
-		
-		
-		
-		
-		
-
-		// document.getElementById('website').addEventListener('input', function() {
-		// 	document.querySelector('.website').textContent = this.value;
-		// });
-		
-		// document.getElementById('company-name').addEventListener('input', function() {
-		// 		document.querySelector('.invoice-company-name').textContent = this.value;
-		// });
-		
-		// document.getElementById('company-address').addEventListener('input', function() {
-		// 		document.querySelector('.invoice-company-address').textContent = this.value;
-		// });
-
-
-
-
-
-
-
-		
-	document.getElementById('generate-pdf').addEventListener('click', function () {
-		const invoice = document.getElementById('page');
+			const updateColors = () => {
+					const [primaryColor, secondaryColor] = [bgColorInput.value, secondaryColorInput.value];
+					const colorSets = [
+							['--selected-color-primary', '.sel-color-bg', primaryColor, true],
+							['--selected-color-secondary', '.secondary-color', secondaryColor],
+							['--selected-color-primary-opaque', '.opaque', primaryColor + '50'],
+					];
 	
-		// Convert the invoice element to an SVG
-		html2canvas(invoice, {
-			scale: 5,
-			onclone: (clonedDoc) => {
-				const svgElements = clonedDoc.querySelectorAll("svg");
+					colorSets.forEach(([prop, selector, color, isTextWhite]) => {
+							document.documentElement.style.setProperty(prop, color);
+							document.querySelectorAll(selector).forEach(el => {
+									el.style.backgroundColor = color;
+									if (isTextWhite) el.style.color = '#ffffff';
+							});
+					});
 	
-				// Convert SVG elements to images
-				Array.from(svgElements).forEach((svg) => {
-					const img = document.createElement("img");
-					img.src = "data:image/svg+xml," + encodeURIComponent(svg.outerHTML);
-					svg.parentNode.replaceChild(img, svg);
-				});
-			},
-		}).then((canvas) => {
-			// Convert the canvas to a data URL
-			const imgData = canvas.toDataURL("image/png");
+					const secondaryStyle = document.querySelector('#secondary-color-style') || document.head.appendChild(Object.assign(document.createElement('style'), { id: 'secondary-color-style' }));
+					secondaryStyle.innerHTML = `.table-cell { background-image: linear-gradient(to left, ${secondaryColor}, white); }`;
 	
-			// Create the PDF
-			const docDefinition = {
-				content: [
-					{
-						image: imgData,
-						width: 612,
-						alignment: "center",
-					},
-				],
-				pageMargins: [0, 0, 0, 0], // Set top margin to 0
+					document.querySelectorAll('.sel-color').forEach(el => el.style.color = primaryColor);
 			};
 	
-			pdfMake.createPdf(docDefinition).download("invoice.pdf");
+			[bgColorInput, secondaryColorInput].forEach(input => input.addEventListener('input', updateColors));
+	
+			document.getElementById('primary-color').addEventListener('input', function() {
+					const selectedColor = this.value;
+					document.querySelectorAll('.sel-color-border').forEach(el => el.style.borderColor = selectedColor);
+			});
+	
+			updateColors();
 		});
-	});
-	
-	
-	
 	
 	}
-
-	
-
 }
 
 const app = new App();
