@@ -36,11 +36,14 @@ input {
   -webkit-appearance: none;
   border-radius: 0; }
 
-.chosen-color {
+.primary-color {
   background-color: #0B9AAB; }
 
 .secondary-color {
   background-color: #ffe70020; }
+
+.primary-color-opaque {
+  background-color: rgba(11, 154, 171, 0.5); }
 
 .table-cell {
   background-image: linear-gradient(to left, #ffe70020, white); }
@@ -78,29 +81,15 @@ p.semi-bold {
 p.bold {
   font-weight: 700; }
 
+.align-right {
+  text-align: right; }
+
 body {
   background-color: #d9d9d9;
   font-family: "Open Sans", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center; }
-
-table {
-  width: 100%;
-  border-collapse: collapse; }
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-  vertical-align: top; }
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold; }
-
-tr:nth-child(even) {
-  background-color: #f9f9f9; }
 
 .site {
   max-width: 100%;
@@ -130,54 +119,6 @@ tr:nth-child(even) {
 
 .invoice-logo {
   max-width: 78px;
-  width: 100%; }
-
-.barcode {
-  max-width: 210px; }
-
-/* Style for table headers and table cells */
-.table-header, .table-cell {
-  border: 1px solid white;
-  padding: 10px;
-  font-size: 10px; }
-
-thead tr, tbody tr {
-  display: flex; }
-
-tbody tr {
-  min-height: 330px; }
-  tbody tr p {
-    line-height: 1.3; }
-
-.align-right {
-  text-align: right;
-  text-transform: uppercase; }
-
-.table-header {
-  font-family: "IBM Plex Sans Condensed", sans-serif;
-  text-transform: uppercase;
-  font-size: 8px;
-  text-align: center;
-  margin: 0;
-  padding: 2px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-
-.table-header.date, .table-cell.date {
-  max-width: 62px;
-  width: 100%; }
-
-.table-header.desc, .table-cell.desc {
-  max-width: 296px;
-  width: 100%; }
-
-.table-header.charges, .table-header.pmnts, .table-header.patient, .table-cell.charges, .table-cell.pmnts, .table-cell.patient {
-  max-width: 72px;
-  width: 100%; }
-
-/* Style for the table */
-.table {
   width: 100%; }
 
 .creditcard {
@@ -277,22 +218,22 @@ button {
   background-color: #284b63;
   color: #ffffff; }
   .input span {
-    display: block;
     font-size: 10px;
-    margin-top: 4px; }
+    margin-top: .25rem; }
   .input input {
     display: block;
     width: 100%;
-    margin-top: 6px;
+    margin-top: 0.5rem;
     border: none;
-    height: 30px;
+    height: 2rem;
     border-radius: 2px;
-    padding-inline: 10px; }
+    padding-inline: 0.5rem; }
   .input hr {
     border: 1px solid #ffffff;
     margin-bottom: 1.5rem;
     width: 100%; }
-  .input #logo, .input #qrcode {
+  .input #logo,
+  .input #qrcode {
     padding: 0; }
 
 .logo-section {
@@ -322,7 +263,7 @@ button {
     .logo-section__checkbox-box {
       min-width: 8px;
       height: 8px;
-      border: 1px solid #0b9aab; }
+      border: 1px solid #0B9AAB; }
 
 .rounded {
   padding-block: 2px;
@@ -340,7 +281,8 @@ button {
     .top-right__billpay-container {
       display: flex; }
   .top-right .barcode {
-    font-size: 16px; }
+    font-size: 16px;
+    max-width: 210px; }
   .top-right__credit-cards {
     width: 84px;
     display: flex;
@@ -419,5 +361,40 @@ button {
     margin-bottom: 16px; }
   .top-right .zindex {
     z-index: 1; }
+
+tr {
+  display: flex; }
+
+tbody tr {
+  min-height: 330px;
+  line-height: 1.3; }
+
+.table-header {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 2px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.table-header,
+.table-cell {
+  border: 1px solid white;
+  padding: 0.625rem;
+  font-size: 10px; }
+  .table-header.date,
+  .table-cell.date {
+    width: 60px; }
+  .table-header.desc,
+  .table-cell.desc {
+    width: 300px; }
+  .table-header.charges, .table-header.pmnts, .table-header.patient,
+  .table-cell.charges,
+  .table-cell.pmnts,
+  .table-cell.patient {
+    width: 70px; }
 
 /*# sourceMappingURL=main.css.map */

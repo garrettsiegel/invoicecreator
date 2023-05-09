@@ -1,16 +1,16 @@
-$breakpoints: ("s": 375px, "m": 700px, "l": 1000px, "xl": 1400px)
+// $breakpoints: ("s": 375px, "m": 700px, "l": 1000px, "xl": 1400px)
 
-// Map breakpoints
-@function breakpoint($b)
-  @return map-get($breakpoints, $b)
+// // Map breakpoints
+// @function breakpoint($b)
+//   @return map-get($breakpoints, $b)
 
-=from($b)
-  @media screen and (min-width: breakpoint($b))
-    @content
+// =from($b)
+//   @media screen and (min-width: breakpoint($b))
+//     @content
 
-=upto($b)
-  @media screen and (max-width: breakpoint($b) - 1px)
-    @content
+// =upto($b)
+//   @media screen and (max-width: breakpoint($b) - 1px)
+//     @content
   
 =flexAlignCenter
   display: flex
@@ -19,3 +19,6 @@ $breakpoints: ("s": 375px, "m": 700px, "l": 1000px, "xl": 1400px)
 
 =borderPrimary
   border: 1px solid $selected-color-primary
+
+=borderPrimaryOpaque
+  border: 1px solid $selected-color-primary-50
