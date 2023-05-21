@@ -1,9 +1,31 @@
+window.toggleSections = function() {
+	const documentType = document.getElementById("documentType");
+	const selectedValue = documentType.options[documentType.selectedIndex].value;
+
+	const statementDiv = document.querySelector(".statement");
+	const pastDueDiv = document.querySelector(".past-due");
+	const finalNoticeDiv = document.querySelector(".final-notice");
+
+	statementDiv.style.display = "none";
+	pastDueDiv.style.display = "none";
+	finalNoticeDiv.style.display = "none";
+
+	if (selectedValue === "statement") {
+		statementDiv.style.display = "block";
+	} else if (selectedValue === "past-due") {
+		pastDueDiv.style.display = "block";
+	} else if (selectedValue === "final-notice") {
+		finalNoticeDiv.style.display = "block";
+	}
+};
+
 class App {
 	constructor() {
 		this.makeEditable();
 		this.changeLogoAndQrcode();
 		this.generatePDF();
 		this.colors();
+		window.toggleSections();
 	}
 
 	makeEditable = () => {

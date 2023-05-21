@@ -2,6 +2,15 @@
   <h1 class="h1">InvoiceCreator</h1>
   <hr>
   <br>
+
+  <label for="documentType">Document Type:</label>
+  <select id="documentType" onchange="toggleSections()">
+    <option value="statement">Statement</option>
+    <option value="past-due">Past Due</option>
+    <option value="final-notice">Final Notice</option>
+  </select>
+  <br>
+
   <label for="bg-color">Primary Color:</label>
   <input type="text" id="primary-color">
   <br>
