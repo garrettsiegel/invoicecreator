@@ -79,7 +79,7 @@ p.x-large {
 p.semi-bold {
   font-weight: 500; }
 
-p.bold {
+p.bold, span.bold {
   font-weight: 700; }
 
 .align-right {
@@ -397,12 +397,91 @@ button {
   .statement .table-cell.patient {
     width: 70px; }
 
-.pg2__credit-card {
-  display: flex; }
-
-.pg2__checkbox {
-  width: 8px;
-  height: 8px;
-  border: 1px solid #0B9AAB; }
+.pg2 {
+  color: #A7A9AC;
+  margin-bottom: 5px; }
+  .pg2 .underline {
+    border-bottom: 0.6px solid #A7A9AC; }
+  .pg2__header {
+    width: 538px;
+    border: 1.5px solid #A7A9AC;
+    border-radius: 6px;
+    padding: 1.5px;
+    margin-inline: auto;
+    margin-bottom: 2px; }
+  .pg2__header-inner {
+    width: 530px;
+    background-color: #E6E7E8;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 5px;
+    text-align: center;
+    display: flexd;
+    justify-content: center;
+    align-items: center; }
+  .pg2__top {
+    width: 555px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between; }
+  .pg2__top-left {
+    width: 273px; }
+  .pg2__top-right {
+    width: 274px;
+    border: 0.6px solid #A7A9AC;
+    border-radius: 5px; }
+  .pg2__pay-by-card-container {
+    border: 0.6px solid #A7A9AC;
+    border-radius: 5px;
+    text-align: center; }
+  .pg2__credit-cards {
+    display: flex; }
+  .pg2__credit-card {
+    display: flex; }
+  .pg2__checkbox {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #0B9AAB; }
+  .pg2__card-number {
+    display: flex; }
+  .pg2__signature-exp {
+    display: flex;
+    justify-content: space-between; }
+  .pg2__pay-by-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .pg2__amount-paid {
+    display: flex;
+    border: 0.6px solid #A7A9AC;
+    border-radius: 5px;
+    border-top: none; }
+  .pg2__address-change {
+    border: 0.6px solid #A7A9AC; }
+  .pg2__sliding-fee {
+    width: 562px;
+    border: 1px solid #A7A9AC;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 13px;
+    margin-top: 1rem;
+    margin-inline: auto; }
+    .pg2__sliding-fee p:first-of-type {
+      margin-bottom: 3px; }
+  .pg2__bottom {
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    width: 536px;
+    margin-inline: auto;
+    font-size: 10px; }
+    .pg2__bottom-end {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15px; }
+      .pg2__bottom-end-item {
+        display: flex; }
+    .pg2__bottom .bottom-section p:first-of-type {
+      margin-bottom: 5px; }
+  .pg2__bottom > .bottom-section + .bottom-section {
+    margin-top: 15px; }
 
 /*# sourceMappingURL=main.css.map */

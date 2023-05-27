@@ -1,8 +1,51 @@
 .pg2
+  color: $color-gray-md
+
+  .underline
+    border-bottom: 0.6px solid $color-gray-md
+
+  &__header
+    width: 538px
+    border: 1.5px solid $color-gray-md
+    border-radius: 6px
+    padding: 1.5px
+    margin-inline: auto
+    margin-bottom: 2px
+
+  &__header-inner
+    width: 530px
+    background-color: $color-gray-lt
+    border: 0.5px solid $color-gray-md
+    border-radius: 5px
+    text-align: center
+    display: flexd
+    justify-content: center
+    align-items: center
+
+  &__top
+    width: 555px
+    margin-inline: auto
+    display: flex
+    justify-content: space-between
+
+  &__top-left
+    width: 273px
+
+  &__top-right
+    width: 274px
+    border: 0.6px solid $color-gray-md
+    border-radius: 5px
 
   &__pay-by-card
+    
+
+  &__pay-by-card-container
+    border: 0.6px solid $color-gray-md
+    border-radius: 5px
+    text-align: center
 
   &__credit-cards
+    display: flex
   
   &__credit-card
     display: flex
@@ -11,3 +54,61 @@
     width: 8px
     height: 8px
     border: 1px solid $selected-color-primary
+
+  &__card-number
+    display: flex
+
+  &__signature-exp
+    display: flex
+    justify-content: space-between
+
+  &__pay-by-card-bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__amount-paid
+    display: flex
+    border: 0.6px solid $color-gray-md
+    border-radius: 5px
+    border-top: none
+
+  &__address-change
+    border: 0.6px solid $color-gray-md
+
+  &__sliding-fee
+    width: 562px
+    border: 1px solid $color-gray-md
+    font-family: 'Times New Roman', Times, serif
+    padding: 13px
+    margin-top: 1rem
+    margin-inline: auto
+
+    p:first-of-type
+      margin-bottom: 3px
+
+  &__bottom
+    margin-top: 20px
+    font-family: 'Times New Roman', Times, serif
+    width: 536px
+    margin-inline: auto
+    font-size: 10px
+
+    &-end
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-top: 15px
+
+      &-item
+        display: flex
+
+    .bottom-section
+      p:first-of-type
+        margin-bottom: 5px
+
+  &__bottom > .bottom-section + .bottom-section
+    margin-top: 15px
+
+
+  margin-bottom: 5px
