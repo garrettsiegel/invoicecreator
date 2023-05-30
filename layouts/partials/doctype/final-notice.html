@@ -1,25 +1,31 @@
 <div class="final-notice">
-  <h2 class="h2">Final Notice</h2>
+  <h2 class="h2 sel-color">Final Notice</h2>
 
   <div class="final-notice__table">
     <table>
-      <thead>
-        <tr>
-          <th class="table-header name sel-color-bg">Patient Name</th>
-          <th class="table-header patient sel-color-bg">Total Patient Responsibility</th>
-          <th class="table-header date sel-color-bg">Payment Due Date</th>
+      <thead class="sel-color-border">
+        <tr class="sel-color-border">
+          <th class="table-header name sel-color-bg">
+            <p class="bold">Patient Name</p>
+          </th>
+          <th class="table-header patient sel-color-bg">
+            <p class="bold">Total Patient Responsibility</p>
+          </th>
+          <th class="table-header date sel-color-bg">
+            <p class="bold">Payment Due Date</p>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-cell name editable">
-            <p>John Doe</p>
+        <tr class="sel-color-border">
+          <td class="table-cell name editable sel-color-border">
+            <p class="large bold editable">John Doe</p>
           </td>
-          <td class="table-cell patient editable">
-            <p>$197.88</p>
+          <td class="table-cell patient editable sel-color-border">
+            <p class="large bold editable">$197.88</p>
           </td>
-          <td class="table-cell date editable">
-            <p>12/01/2022</p>
+          <td class="table-cell date editable sel-color-border">
+            <p class="large bold editable">12/01/2022</p>
           </td>
         </tr>
       </tbody>
@@ -27,15 +33,19 @@
   </div>
 
 
-  <h4 class="h4">Final Notice</h4>
+  <div class="final-notice__bottom">
+    <p class="final-notice__header bold">Final Notice</p>
 
-  <p>We regret that you have not paid the balance due on your account, nor have you responded to our notices. If payment in full is not made within <span>(10) ten days</span> we may turn your account over to legal collections and proceed with your dismissal from this practice. Turning your account over to collections could affect your credit rating. Collection fees will also be added.</p>
-
-  <p>Please contact our billing department at 813.653.6100 to make a payment, set up payment arrangements or with any questions you have regarding this notice.</p>
+    <p class="large">We regret that you have not paid the balance due on your account, nor have you responded to our notices. If payment in full is not made within <span class="bold">(10) ten days</span> we may turn your account over to legal collections and proceed with your dismissal from this practice. Turning your account over to collections could affect your credit rating. Collection fees will also be added.</p>
   
-  <p>Collections Department</p>
-  <p>Suncoast Community Health Centers</p>
+    <p class="large">Please contact our billing department at <span class="editable">813.653.6100</span> to make a payment, set up payment
+      arrangements or with any questions you have regarding this notice.</p>
+    
+    <p class="large">Collections Department<br><span class="editable">Suncoast Community Health Centers</span></p>
 
-  <p>This is an attempt to collect a debt. Any information obtained will be used for that purpose.</p>
+    <p class="large">This is an attempt to collect a debt. Any information obtained will be used for that purpose.</p>
+
+  </div>
+  
 
 </div>

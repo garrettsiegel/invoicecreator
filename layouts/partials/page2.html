@@ -13,52 +13,55 @@
     
           <div class="pg2__credit-cards underline">
             <div class="pg2__credit-card">
-              <img src="../images/visa.png" alt="">
+              <img src="../images/pg2-visa.png" alt="">
               <div class="pg2__checkbox"></div>
             </div>
             <div class="pg2__credit-card">
-              <img src="../images/mastercard.png" alt="">
+              <img src="../images/pg2-mc.png" alt="">
               <div class="pg2__checkbox"></div>
             </div>
             <div class="pg2__credit-card">
-              <img src="../images/discover.png" alt="">
+              <img src="../images/pg2-discover.png" alt="">
               <div class="pg2__checkbox"></div>
             </div>
             <div class="pg2__credit-card">
-              <img src="../images/amex.png" alt="">
+              <img src="../images/pg2-amex.png" alt="">
               <div class="pg2__checkbox"></div>
             </div>
           </div>
       
           <div class="pg2__card-number underline">
-            <p>card number</p>
+            <p class="x-small">card number</p>
             <div class="pg2__auth">
               <div class="pg2__auth-code">
-                <p>authorization code</p>
+                <p>authorization<br>code</p>
                 <div class="pg2__auth-underline"></div>
                 <div class="pg2__auth-underline"></div>
                 <div class="pg2__auth-underline"></div>
                 <div class="pg2__auth-underline"></div>
               </div>
-              <p>(usually last 3 or 4 digits on back of card in signature line)</p>
+              <p class="pg2__auth-code-tiny">(usually last 3 or 4 digits on back of card in signature line)</p>
             </div>
           </div>
     
           <div class="pg2__signature-exp">
-            <p>signature</p>
-            <p>exp. date</p>
+            <p class="x-small">signature</p>
+            <p class="x-small">exp. date</p>
+
           </div>
       
           
         </div>
         
         <div class="pg2__pay-by-card-bottom">
-          <div class="pg2__checkbox"></div>
-          <p>paying by check</p>
+          <div class="pg2__pay-by-card-checkbox">
+            <div class="pg2__checkbox"></div>
+            <p class="medium bold">paying by check</p>
+          </div>
       
           <div class="pg2__amount-paid">
-            <p>show amount paid here</p>
-            <p>$</p>
+            <p class="x-small bold">show amount<br>paid here</p>
+            <p class="x-large bold">$</p>
           </div>
         </div>
         
@@ -66,36 +69,71 @@
       </div>
     
       <div class="pg2__address-change">
-        <p class="large bold">ADDRESS CORRECTION</p>
-        <p>COMPLETE THIS SECTION IF YOUR ADDRESS ON REVERSE SIDE IS INCORRECT</p>
-    
-        <p>name</p>
-        <p>address</p>
-        <div class="pg2__address-line2"></div>
-        <p>city</p>
-        <p>state, zip</p>
+        <div class="underline top-section-container">
+          <div class="underline top-section">
+            <p class="large bold">ADDRESS CORRECTION</p>
+            <p class="x-small">COMPLETE THIS SECTION IF YOUR ADDRESS ON REVERSE SIDE IS INCORRECT</p>
+          </div>
+        </div>
+        
+        <div class="underline">
+          <p class="x-small">name</p>
+        </div>
+        <div class="underline">
+          <p class="x-small">address</p>
+        </div>
+        <div class="underline"></div>
+        <div class="underline">
+          <p class="x-small">city</p>
+        </div>
+        <div>
+          <p class="x-small">state, zip</p>
+        </div>
+        
       </div>
 
     </div>
   
     <div class="pg2__top-right">
       <div class="pg2__insurance">
-        <p>PRIMARY INSURANCE COMPANY NAME</p>
-        <p>INSURANCE COMPANY'S ADDRESS</p>
-        <p>CITY</p>
-        <p>STATE</p>
-        <p>ZIP</p>
-        <p>POLICY HOLDER NAME</p>
-        <p>HOLDER'S DOB</p>
-        <p>RELATIONSHIP TO INSURED</p>
-        <p>INSURED'S ID NUMBER</p>
-        <p>GROUP PLAN NUMBER</p>
-        <p>SECONDARY INSURANCE COMPANY NAME</p>
-        <p>INSURANCE COMPANY'S ADDRESS</p>
-        <p>CITY</p>
-        <p>STATE</p>
-        <p>ZIP</p>
-        <p>INSURED'S ID NUMBER GROUP PLAN NUMBER</p>
+        <div class="underline">
+          <p class="x-small">PRIMARY INSURANCE COMPANY NAME</p>
+        </div>
+        <div class="underline">
+          <p class="x-small">INSURANCE COMPANY'S ADDRESS</p>
+
+        </div>
+        <div class="group underline">
+          <p class="x-small">CITY</p>
+          <p class="x-small state">STATE</p>
+          <p class="x-small">ZIP</p>
+        </div>
+        <div class="group underline">
+          <p class="x-small">POLICY HOLDER NAME</p>
+          <p class="x-small">HOLDER'S DOB</p>
+          <p class="x-small">RELATIONSHIP TO INSURED</p>
+        </div>
+        <div class="group underline">
+          <p class="x-small">INSURED'S ID NUMBER</p>
+          <p class="x-small">GROUP PLAN NUMBER</p>
+        </div>
+        <div class="underline">
+          <p class="x-small">SECONDARY INSURANCE COMPANY NAME</p>
+        </div>
+        <div class="underline">
+          <p class="x-small">INSURANCE COMPANY'S ADDRESS</p>
+        </div>
+        <div class="group underline">
+          <p class="x-small">CITY</p>
+          <p class="x-small state">STATE</p>
+          <p class="x-small">ZIP</p>
+        </div>
+        <div class="group">
+          <p class="x-small">INSURED'S ID NUMBER</p>
+          <p class="x-small">GROUP PLAN NUMBER</p>
+        </div>
+        
+
       </div>
     </div>
   </div>
@@ -144,19 +182,19 @@
       <p class="x-large bold">For your convenience, we offer the following payment options:</p>
 
       <div class="pg2__bottom-end-item">
-        <div class="pg2__checkmark">✓</div><p>cash</p>
+        <div class="pg2__checkmark">✓</div><p class="bold">Cash</p>
       </div>
       <div class="pg2__bottom-end-item">
-      <div class="pg2__checkmark">✓</div><p>Personal Checks</p>
+      <div class="pg2__checkmark">✓</div><p class="bold">Personal Checks</p>
       </div>
       <div class="pg2__bottom-end-item">
-      <div class="pg2__checkmark">✓</div><p>Credit Cards</p>
+      <div class="pg2__checkmark">✓</div><p class="bold">Credit Cards</p>
       </div>
       <div class="pg2__bottom-end-item">
-      <div class="pg2__checkmark">✓</div><p>Money Order</p>
+      <div class="pg2__checkmark">✓</div><p class="bold">Money Order</p>
       </div>
 
-      <p>Payment is due in full by the <span>PAYMENT DUE DATE</span> indicated on the front of this statement.</p>
+      <p class="bold">Payment is due in full by the <span class="ul">PAYMENT DUE DATE</span> indicated on the front of this statement.</p>
     </div>
   </div>
   

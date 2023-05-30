@@ -53,6 +53,10 @@ input {
   font-family: 'USPS IMb';
   src: url("../fonts/USPSIMBStandard.ttf") format("truetype"); }
 
+@font-face {
+  font-family: 'Bookman';
+  src: url("../fonts/bookman.otf") format("opentype"); }
+
 .barcode {
   font-family: 'USPS IMb', Arial, sans-serif; }
 
@@ -112,7 +116,8 @@ body {
   width: 612px;
   height: 792px;
   padding: 1rem;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  position: relative; }
 
 .top {
   display: flex;
@@ -143,7 +148,10 @@ button {
   border-radius: 2px; }
 
 .bottom {
-  display: flex; }
+  display: flex;
+  position: absolute;
+  width: 575px;
+  bottom: 18px; }
 
 .bottom__post-it {
   position: relative;
@@ -210,7 +218,74 @@ button {
       padding-top: 14px;
       padding-bottom: 9px; }
   .bottom-right__right {
-    width: 187px; }
+    width: 187px;
+    border: 1px solid #0B9AAB;
+    border-radius: 5px; }
+    .bottom-right__right-top {
+      display: flex;
+      justify-content: space-between; }
+  .bottom-right__acct-num, .bottom-right__stmnt-dt {
+    background-color: #0B9AAB;
+    width: 50%;
+    text-align: center; }
+    .bottom-right__acct-num p:first-child, .bottom-right__stmnt-dt p:first-child {
+      padding-block: 2px;
+      color: #ffffff; }
+    .bottom-right__acct-num p:last-child, .bottom-right__stmnt-dt p:last-child {
+      background-color: #ffffff;
+      border-bottom: 1px solid #0B9AAB;
+      padding-block: 6px; }
+  .bottom-right__acct-num {
+    border-right: 1px solid #0B9AAB; }
+  .bottom-right__due-date, .bottom-right__patient-resp {
+    display: flex;
+    justify-content: space-between; }
+  .bottom-right__due-date p:first-child, .bottom-right__patient-resp p:first-child {
+    background-color: #0B9AAB;
+    color: #ffffff;
+    padding-block: 3px;
+    width: 87px;
+    text-align: center; }
+  .bottom-right__due-date p:last-child, .bottom-right__patient-resp p:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    background-color: rgba(11, 154, 171, 0.5); }
+  .bottom-right__patient-resp {
+    position: relative;
+    border-top: 1px solid #0B9AAB; }
+    .bottom-right__patient-resp .patient-last-paragraph {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      background-color: rgba(11, 154, 171, 0.5) !important;
+      color: #000000 !important;
+      width: 100px !important;
+      position: absolute;
+      right: 0; }
+  .bottom-right__circle {
+    width: 90px;
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    height: 30px;
+    pointer-events: none; }
+  .bottom-right .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 83px;
+    bottom: 3px;
+    rotate: 90deg;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-bottom: 18px solid #0B9AAB; }
 
 .input {
   width: 30%;
@@ -366,16 +441,17 @@ button {
   display: flex; }
 
 .statement tbody tr {
-  min-height: 330px;
+  min-height: 300px;
   line-height: 1.3; }
 
 .statement .table-header {
   font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-family: "Helvetica Neue";
+  font-stretch: condensed;
   font-size: 8px;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
-  padding: 2px 0;
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -390,16 +466,125 @@ button {
     width: 60px; }
   .statement .table-header.desc,
   .statement .table-cell.desc {
-    width: 300px; }
+    width: 280px; }
   .statement .table-header.charges, .statement .table-header.pmnts, .statement .table-header.patient,
   .statement .table-cell.charges,
   .statement .table-cell.pmnts,
   .statement .table-cell.patient {
-    width: 70px; }
+    width: 80px; }
+
+.past-due {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .past-due h2 {
+    font-family: 'Bookman';
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 41px;
+    color: #0B9AAB; }
+  .past-due__header {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 20px; }
+  .past-due__bottom {
+    margin-bottom: 26px; }
+    .past-due__bottom p {
+      max-width: 530px;
+      margin-inline: auto;
+      line-height: 1.3; }
+    .past-due__bottom p + p {
+      margin-top: 18px; }
+  .past-due__table {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .past-due__table tbody tr td + td {
+      border-left: 1px solid #0B9AAB; }
+    .past-due__table thead tr, .past-due__table tbody tr {
+      display: flex;
+      text-align: center;
+      border: 1px solid #0B9AAB; }
+      .past-due__table thead tr .name, .past-due__table tbody tr .name {
+        width: 370px; }
+      .past-due__table thead tr .patient, .past-due__table tbody tr .patient {
+        width: 94px; }
+      .past-due__table thead tr .date, .past-due__table tbody tr .date {
+        width: 92px; }
+    .past-due__table thead .table-cell, .past-due__table tbody .table-cell {
+      background-image: none;
+      padding-block: 6px; }
+    .past-due__table thead .table-header, .past-due__table tbody .table-header {
+      font-family: "IBM Plex Sans Condensed", sans-serif;
+      font-family: "Helvetica Neue";
+      font-stretch: condensed;
+      font-size: 8px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      padding-block: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+
+.final-notice {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .final-notice h2 {
+    font-family: 'Bookman';
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 41px;
+    color: #0B9AAB; }
+  .final-notice__header {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 12px;
+    margin-bottom: 20px; }
+  .final-notice__bottom {
+    margin-bottom: 26px; }
+    .final-notice__bottom p {
+      max-width: 530px;
+      margin-inline: auto;
+      line-height: 1.3; }
+    .final-notice__bottom p + p {
+      margin-top: 18px; }
+  .final-notice__table {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .final-notice__table tbody tr td + td {
+      border-left: 1px solid #0B9AAB; }
+    .final-notice__table thead tr, .final-notice__table tbody tr {
+      display: flex;
+      text-align: center;
+      border: 1px solid #0B9AAB; }
+      .final-notice__table thead tr .name, .final-notice__table tbody tr .name {
+        width: 370px; }
+      .final-notice__table thead tr .patient, .final-notice__table tbody tr .patient {
+        width: 94px; }
+      .final-notice__table thead tr .date, .final-notice__table tbody tr .date {
+        width: 92px; }
+    .final-notice__table thead .table-cell, .final-notice__table tbody .table-cell {
+      background-image: none;
+      padding-block: 6px; }
+    .final-notice__table thead .table-header, .final-notice__table tbody .table-header {
+      font-family: "IBM Plex Sans Condensed", sans-serif;
+      font-family: "Helvetica Neue";
+      font-stretch: condensed;
+      font-size: 8px;
+      text-transform: uppercase;
+      text-align: center;
+      margin: 0;
+      padding-block: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
 
 .pg2 {
-  color: #A7A9AC;
-  margin-bottom: 5px; }
+  color: #A7A9AC; }
   .pg2 .underline {
     border-bottom: 0.6px solid #A7A9AC; }
   .pg2__header {
@@ -429,32 +614,98 @@ button {
     width: 274px;
     border: 0.6px solid #A7A9AC;
     border-radius: 5px; }
+  .pg2__pay-by-card {
+    position: relative; }
+  .pg2__pay-by-card::after {
+    content: '';
+    display: block;
+    clear: both;
+    border-right: 0.6px solid #A7A9AC;
+    height: 55px;
+    position: absolute;
+    right: 0;
+    bottom: 10px; }
   .pg2__pay-by-card-container {
     border: 0.6px solid #A7A9AC;
     border-radius: 5px;
     text-align: center; }
   .pg2__credit-cards {
-    display: flex; }
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 25px;
+    padding-block: 1px; }
   .pg2__credit-card {
     display: flex; }
+    .pg2__credit-card img {
+      filter: grayscale(100%);
+      width: 32px; }
   .pg2__checkbox {
     width: 8px;
     height: 8px;
-    border: 1px solid #0B9AAB; }
+    border: 0.5px solid #A7A9AC;
+    margin-top: 2px; }
   .pg2__card-number {
-    display: flex; }
+    display: flex;
+    justify-content: space-between;
+    height: 25px;
+    text-transform: uppercase;
+    padding: 2px; }
+  .pg2__auth {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-direction: column; }
+  .pg2__auth-code {
+    display: flex;
+    text-align: left;
+    justify-self: flex-end; }
+    .pg2__auth-code p {
+      font-size: 5px; }
+    .pg2__auth-code-tiny {
+      font-size: 4px;
+      margin-top: 3px; }
+  .pg2__auth-underline {
+    border-bottom: 0.6px solid #A7A9AC;
+    width: 14px;
+    margin-left: 2px; }
   .pg2__signature-exp {
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    height: 20px;
+    text-transform: uppercase;
+    padding: 2px;
+    position: relative; }
+    .pg2__signature-exp-border {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+      bottom: 0;
+      right: -1px;
+      border-right: 0.6px solid #A7A9AC; }
   .pg2__pay-by-card-bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 2px; }
+  .pg2__pay-by-card-checkbox {
+    display: flex;
+    margin-left: 10px; }
+    .pg2__pay-by-card-checkbox .pg2__checkbox {
+      margin-right: 3px; }
   .pg2__amount-paid {
     display: flex;
     border: 0.6px solid #A7A9AC;
-    border-radius: 5px;
-    border-top: none; }
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+    height: 21px;
+    min-width: 143px;
+    padding-left: 3px;
+    padding-top: 4px; }
+    .pg2__amount-paid p:first-child {
+      width: 60px; }
   .pg2__address-change {
     border: 0.6px solid #A7A9AC; }
   .pg2__sliding-fee {
@@ -483,5 +734,60 @@ button {
       margin-bottom: 5px; }
   .pg2__bottom > .bottom-section + .bottom-section {
     margin-top: 15px; }
+  .pg2__bottom-end-item {
+    width: 80px; }
+    .pg2__bottom-end-item + * {
+      margin-top: 5px; }
+    .pg2__bottom-end-item:first-of-type {
+      margin-top: 5px; }
+  .pg2__checkmark {
+    margin-right: 6px; }
+  .pg2__insurance > *, .pg2__address-change > * {
+    height: 24px;
+    padding-left: 3px;
+    padding-right: 17px;
+    padding-top: 2px; }
+  .pg2__address-change > * {
+    height: 17px; }
+  .pg2__address-change {
+    text-transform: uppercase;
+    border-radius: 5px; }
+    .pg2__address-change .top-section-container {
+      height: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      background-color: none;
+      padding: 1px;
+      border-bottom: 0.6px solid #A7A9AC;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px; }
+    .pg2__address-change .top-section {
+      height: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+      background-color: #E6E7E8;
+      padding: 1px;
+      border: 0.6px solid #A7A9AC;
+      margin: 2px;
+      border-top-right-radius: 4px;
+      border-top-left-radius: 4px; }
+      .pg2__address-change .top-section p:first-of-type {
+        margin-bottom: 3px; }
+
+.ul {
+  text-decoration: underline;
+  text-underline-offset: 0.35px;
+  text-decoration-thickness: 0.5px; }
+
+.group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.state {
+  margin-left: auto;
+  margin-right: 40px; }
 
 /*# sourceMappingURL=main.css.map */

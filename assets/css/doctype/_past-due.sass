@@ -1,0 +1,79 @@
+.past-due
+  display: flex
+  flex-direction: column
+  align-items: center
+  
+
+  h2
+    font-family: 'Bookman'
+    text-transform: uppercase
+    text-align: center
+    font-size: 41px
+    color: $selected-color-primary
+
+  &__header
+    text-align: center
+    font-size: 14px
+    margin-top: 12px
+    margin-bottom: 20px
+
+  &__bottom
+    margin-bottom: 26px
+
+    p
+      max-width: 530px
+      margin-inline: auto
+      line-height: 1.3
+
+
+    p + p
+      margin-top: 18px
+
+  &__table
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+
+    tbody
+      tr
+        td + td
+          border-left: 1px solid $selected-color-primary
+
+    thead, tbody
+      tr
+        display: flex
+        text-align: center
+        border: 1px solid $selected-color-primary
+
+      
+        .name
+          width: 370px
+
+        .patient
+          width: 94px
+
+        .date
+          width: 92px
+
+    
+
+    
+      .table-cell
+        background-image: none
+        padding-block: 6px
+
+      .table-header
+        font-family: $font-alt
+        font-family: "Helvetica Neue"
+        font-stretch: condensed
+        font-size: 8px
+        text-transform: uppercase
+        text-align: center
+        margin: 0
+        padding-block: 2px
+        // padding: 2px 0
+        display: flex
+        justify-content: center
+        align-items: center
+  

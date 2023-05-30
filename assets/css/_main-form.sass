@@ -19,6 +19,7 @@
   height: 792px
   padding: 1rem
   background-color: $color-white
+  position: relative
   
 .top
   display: flex
@@ -53,6 +54,9 @@ button
 
 .bottom
   display: flex
+  position: absolute
+  width: 575px
+  bottom: 18px
 
   
 
@@ -153,3 +157,87 @@ button
 
   &__right
     width: 187px
+    border: 1px solid $selected-color-primary
+    border-radius: 5px
+
+    &-top
+      display: flex
+      justify-content: space-between
+
+  &__acct-num,
+  &__stmnt-dt
+    background-color: $selected-color-primary
+    width: 50%
+    text-align: center
+
+    p:first-child
+      padding-block: 2px
+      color: $color-white
+      // border-right: 1px solid $selected-color-primary
+
+    p:last-child
+      background-color: $color-white
+      border-bottom: 1px solid $selected-color-primary
+      padding-block: 6px
+
+  &__acct-num
+    border-right: 1px solid $selected-color-primary
+
+  &__due-date,
+  &__patient-resp
+    display: flex
+    justify-content: space-between
+
+  &__due-date,
+  &__patient-resp,
+    p:first-child
+      background-color: $selected-color-primary
+      color: $color-white
+      padding-block: 3px
+      width: 87px
+      text-align: center
+
+    p:last-child
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      text-align: center
+      width: 100px
+      background-color: $selected-color-primary-50
+
+  &__patient-resp
+    position: relative
+    border-top: 1px solid $selected-color-primary
+
+    .patient-last-paragraph
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      text-align: center
+      height: 100%
+      background-color: $selected-color-primary-50 !important
+      color: $color-black !important
+      width: 100px !important
+      position: absolute
+      right: 0
+
+  &__circle
+    width: 90px
+    position: absolute
+    bottom: -3px
+    right: 0
+    height: 30px
+    pointer-events: none
+
+  .triangle
+    position: absolute
+    width: 0
+    height: 0
+    left: 83px
+    bottom: 3px
+    rotate: 90deg
+    border-right: 12px solid transparent
+    border-left: 12px solid transparent
+    border-bottom: 18px solid $selected-color-primary

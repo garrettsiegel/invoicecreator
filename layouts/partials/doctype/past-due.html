@@ -1,25 +1,31 @@
 <div class="past-due">
-  <h2 class="h2">Past Due Notice</h2>
+  <h2 class="h2 sel-color">Past Due Notice</h2>
 
   <div class="past-due__table">
     <table>
       <thead>
-        <tr>
-          <th class="table-header name sel-color-bg">Patient Name</th>
-          <th class="table-header patient sel-color-bg">Total Patient Responsibility</th>
-          <th class="table-header date sel-color-bg">Payment Due Date</th>
+        <tr class="sel-color-border">
+          <th class="table-header name sel-color-bg">
+            <p class="bold">Patient Name</p>
+          </th>
+          <th class="table-header patient sel-color-bg">
+            <p class="bold">Total Patient Responsibility</p>
+          </th>
+          <th class="table-header date sel-color-bg">
+            <p class="bold">Payment Due Date</p>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="table-cell name editable">
-            <p>John Doe</p>
+        <tr class="sel-color-border">
+          <td class="table-cell name editable sel-color-border">
+            <p class="large bold editable">John Doe</p>
           </td>
-          <td class="table-cell patient editable">
-            <p>$197.88</p>
+          <td class="table-cell patient editable sel-color-border">
+            <p class="large bold editable">$197.88</p>
           </td>
-          <td class="table-cell date editable">
-            <p>12/01/2022</p>
+          <td class="table-cell date editable sel-color-border">
+            <p class="large bold editable">12/01/2022</p>
           </td>
         </tr>
       </tbody>
@@ -27,15 +33,18 @@
   </div>
 
 
-  <h4 class="h4">Past Due Notice</h4>
+  <div class="past-due__bottom">
+    <p class="past-due__header bold">Past Due Notice</p>
 
-  <p>This is a friendly reminder that you have an outstanding patient balance. We realize that life is busy and this could be a simple oversight.</p>
-
-  <p><span class="bold">Please remit your payment within 15 days.</span> If you cannot pay in full or need to arrange a special payment plan please contact our office at 813.653.6100.</p>
+    <p class="large">This is a friendly reminder that you have an outstanding patient balance. We realize that life is busy and this could be a simple oversight.</p>
   
-  <p>Thank you for your cooperation in this matter.</p>
-
-  <p>Sincerely,</p>
-  <p>Billing Department<br>Suncoast Community Health Centers</p>
+    <p class="large"><span class="bold">Please remit your payment within 15 days.</span> If you cannot pay in full or need to arrange a special payment plan please contact our office at <span class="editable">813.653.6100</span>.</p>
+    
+    <p class="large">Thank you for your cooperation in this matter.</p>
+  
+    <p class="large">Sincerely,</p>
+    <p class="large">Billing Department<br><span class="editable">Suncoast Community Health Centers</span></p>
+  </div>
+  
 
 </div>
