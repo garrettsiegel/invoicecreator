@@ -1,4 +1,4 @@
-baseURL = 'https://garrettsiegel.github.io/'
+baseURL = 'https://garrettsiegel.github.io/invoicecreator'
 languageCode = 'en-us'
 title = 'Invoice Template'
 enableRobotsTXT = true
