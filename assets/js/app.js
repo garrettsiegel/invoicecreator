@@ -1,3 +1,7 @@
+import generatePDF from 'js/generatePDF'
+import gsap from 'gsap'
+
+
 window.toggleSections = function() {
 	const documentType = document.getElementById("documentType");
 	const selectedValue = documentType.options[documentType.selectedIndex].value;
@@ -23,9 +27,9 @@ class App {
 	constructor() {
 		this.makeEditable();
 		this.changeLogoAndQrcode();
-		this.generatePDF();
 		this.colors();
 		window.toggleSections();
+		this.generatePDF = new generatePDF();
 	}
 
 	makeEditable = () => {
@@ -52,39 +56,10 @@ class App {
 		});
 	}
 
-	generatePDF = () => {
-		document.getElementById('generate-pdf').addEventListener('click', function () {
-			const invoice = document.getElementById('page');
-		
-			html2canvas(invoice, {
-				scale: 5,
-				onclone: (clonedDoc) => {
-					const svgElements = clonedDoc.querySelectorAll("svg");
-		
-					Array.from(svgElements).forEach((svg) => {
-						const img = document.createElement("img");
-						img.src = "data:image/svg+xml," + encodeURIComponent(svg.outerHTML);
-						svg.parentNode.replaceChild(img, svg);
-					});
-				},
-			}).then((canvas) => {
-				const imgData = canvas.toDataURL("image/png");
-		
-				const docDefinition = {
-					content: [
-						{
-							image: imgData,
-							width: 612,
-							alignment: "center",
-						},
-					],
-					pageMargins: [0, 0, 0, 0],
-				};
-		
-				pdfMake.createPdf(docDefinition).download("invoice.pdf");
-			});
-		});
-	}
+	
+	
+	
+	
 
 	colors = () => {
 		document.addEventListener('DOMContentLoaded', () => {
